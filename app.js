@@ -1,6 +1,5 @@
 const { useState, useEffect, useRef } = React;
 
-// Inline Styles
 const styles = {
   searchContainer: {
     maxWidth: '700px',
@@ -53,7 +52,7 @@ const styles = {
   },
 };
 
-// SearchBar Component
+
 const SearchBar = ({ searchQuery, onSearchChange, onClearSearch }) => {
   const [isFocused, setIsFocused] = useState(false);
   
@@ -100,7 +99,7 @@ const SearchBar = ({ searchQuery, onSearchChange, onClearSearch }) => {
   );
 };
 
-// UserCard Component
+
 const UserCard = ({ user, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
@@ -318,7 +317,7 @@ const UserCard = ({ user, index }) => {
   );
 };
 
-// UserList Component
+
 const UserList = ({ users, searchQuery }) => {
   const emptyStateStyle = {
     textAlign: 'center',
@@ -361,7 +360,7 @@ const UserList = ({ users, searchQuery }) => {
   );
 };
 
-// Stats Component
+
 const StatsBar = ({ totalUsers, filteredCount, searchQuery }) => {
   const statsContainerStyle = {
     display: 'flex',
@@ -401,7 +400,7 @@ const StatsBar = ({ totalUsers, filteredCount, searchQuery }) => {
   );
 };
 
-// Loading Component
+
 const LoadingSpinner = () => {
   const spinnerContainerStyle = {
     display: 'flex',
@@ -429,7 +428,6 @@ const LoadingSpinner = () => {
   );
 };
 
-// Error Component
 const ErrorMessage = ({ error }) => {
   const errorStyle = {
     padding: '20px',
@@ -454,14 +452,14 @@ const ErrorMessage = ({ error }) => {
   );
 };
 
-// Main App Component
+
 const App = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Fetch users on component mount
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -494,12 +492,12 @@ const App = () => {
     );
   });
 
-  // Handle search input change
+ 
   const handleSearchChange = (query) => {
     setSearchQuery(query);
   };
 
-  // Handle clear search
+
   const handleClearSearch = () => {
     setSearchQuery('');
   };
